@@ -23,6 +23,8 @@ public class CreateBooking extends BaseAPISteps {
 
 		response = RestAssured.given().header("Content-Type","application/json").body(postBody).post("/booking");
 
+        response.then().statusCode(200);
+
 		int statusCode = response.getStatusCode();
 		System.out.println("The status code is: "+statusCode);
 
